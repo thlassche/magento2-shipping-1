@@ -305,7 +305,7 @@ class OrderConvertService extends AbstractHelper
             $hsCode = '';
 
             if ($product !== null) {
-                $originCountry = $product->getCountryOfManufacture() ?? $originCountry;
+                $originCountry = $product->getCountryOfManufacture() ?: $originCountry;
                 $hsCode = $product->getHsCode() ?? '';
             }
             $customsLines[] = [
